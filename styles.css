@@ -1,0 +1,79 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: #041836;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    line-height: 1.25;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(231, 230, 241);
+}
+
+a:hover {
+    color: rgb(186, 186, 209);
+}
+
+#mouse-gradient {
+    height: 100%;
+    width: 100%;
+
+    background-image: radial-gradient(
+        circle farthest-side at var(--x, 20px) var(--y, 20px),
+        #0c56ce3b 0%,
+        transparent 10% 
+    );
+
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    /* z-index: 99; */
+}
+
+.size1 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(231, 230, 241);
+}
+
+.size2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(218, 216, 229);
+}
+
+.size3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: rgba(223, 222, 234, 0.712);
+}
+
+#title-div {
+    position: absolute;
+    width: 35%;
+    height: 50%;
+
+    left: 15%;
+    top: 12.5%;
+
+    /* background-color: blue; */
+}
+
+#main-div {
+    position: absolute;
+    width: 35%;
+    height: auto;
+
+    left: 50%;
+    top: 12.5%;
+
+    line-height: 1.6;
+
+    /* background-color: red; */
+}
