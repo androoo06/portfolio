@@ -72,14 +72,14 @@ $(function () {
         parent.onmouseenter = setSelected
         parent.onmouseleave = removeSelected
 
-        parent.onclick = function(event) {
-            setSelected({"target": {"id": `$-${event.target.id.split("-")[2]}`}})
+        // parent.onclick = function(event) {
+        //     setSelected({"target": {"id": `$-${event.target.id.split("-")[2]}`}})
 
-            let temp = openTab
-            openTab = event.target.id.split("-")[2]
+        //     let temp = openTab
+        //     openTab = event.target.id.split("-")[2]
 
-            removeSelected({"target": {"id": `$-${temp}`}})
-        }
+        //     removeSelected({"target": {"id": `$-${temp}`}})
+        // }
     })
 })
 
