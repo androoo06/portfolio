@@ -71,8 +71,10 @@ $(function () {
 
     //
     $(".project-box").on("click", function() {
-        let target = $(this).closest('.project-box')[0]
-        console.log(target)
+        let target = $(this).closest('.project-box')
+        if (target.find(".open-in-new").length != 0) {
+            window.open(target[0].dataset.externallink, '_blank').focus()
+        }
     })
 })
 

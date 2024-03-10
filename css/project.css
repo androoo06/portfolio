@@ -68,3 +68,14 @@
 
     color: var(--technology-text-color);
 }
+
+.open-in-new {
+    width: 35px;
+    aspect-ratio: 1;
+    
+    position: absolute;
+    right:0px;
+
+    user-select: none;
+    /* background-color: red; */
+}
