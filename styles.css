@@ -99,17 +99,32 @@ a:hover {
     background-color: black;
 }
 
+.open-section-title {
+    color: rgb(218, 216, 229);
+}
+
+.closed-section-title {
+    color: rgba(223, 222, 234, 0.492);
+}
+
+.open-section-barrier {
+    width: 50px;
+    background-color: rgb(218, 216, 229);
+}
+
+.closed-section-barrier {
+    width: 35px;
+    background-color: rgba(223, 222, 234, 0.492);
+}
+
 .section-barrier {
     margin-bottom: 4px;
     height: 2px;
-    width: 35px;
-    background-color: rgba(223, 222, 234, 0.492);
-
+    
     display: inline-block;
 }
 
 .section-title {
-    color: rgba(223, 222, 234, 0.492);
     font-size: small;
     font-weight: bolder;
 
@@ -118,6 +133,7 @@ a:hover {
 
 .section-title-parent {
     max-width: 30%;
+    transition: all 0.25s ease;
 }
 
 /* #section-ABOUT:hover {

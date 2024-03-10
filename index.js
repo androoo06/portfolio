@@ -1,13 +1,22 @@
+let openTab = "ABOUT"
+
 $(function () {
-
-
     // $('#myButton').click(function() {
     //     $('html, body').animate({
     //         scrollTop: $("#myDiv").offset().top
     //     }, 2000);
     // });
 
-    // $()
+    document.querySelectorAll(".section-title-parent").forEach((parent) => {
+        parent.onmouseenter = function(event) {
+
+            
+
+        }
+        parent.onmouseleave = function(event) {
+
+        }
+    })
 })
 
 // mouse gradient
