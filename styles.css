@@ -33,7 +33,8 @@ a:hover {
     top: 0px;
     left: 0px;
     margin: 0px;
-    /* z-index: 99; */
+    z-index: 99;
+    pointer-events: none;
 }
 
 .size1 {
@@ -54,6 +55,13 @@ a:hover {
     color: rgba(223, 222, 234, 0.712);
 }
 
+.size4 {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(223, 222, 234, 0.545);
+    user-select: none;
+}
+
 #title-div {
     position: absolute;
     width: 35%;
@@ -63,6 +71,7 @@ a:hover {
     top: 12.5%;
 
     /* background-color: blue; */
+    user-select: none;
 }
 
 #main-div {
@@ -76,4 +85,70 @@ a:hover {
     line-height: 1.6;
 
     /* background-color: red; */
+}
+
+.project-box {
+    width: 100%;
+    /* aspect-ratio: 2; */
+
+    border-radius: 2% 2% 2% 2%;
+    background-color: transparent;
+
+    display: grid;
+
+    grid-template-rows: 20% 70% 10%;
+    grid-template-columns: 25% 75%;
+}
+
+.project-box:hover {
+    background-color: #1f478729;
+}
+
+.project-item {
+    display: inline-grid;
+}
+
+.project-date {
+    /* position: inherit;
+    width: 100%;
+    height: 100%;*/
+
+    background-color: black; 
+
+    text-align: center;
+    line-height: 4vh;
+}
+
+.project-title {
+    font-size: 2.35vh;
+    font-weight: bold;
+    color: rgb(218, 216, 229);
+
+    padding-left: 2%;
+    text-align: left;
+    line-height: 2em;
+    
+    background-color: blue;
+}
+
+.project-desc {
+    padding-left: 2%;
+    text-align: left;
+    font-size: 2vh;
+
+    background-color: green;
+}
+
+.project-technologies {
+    background-color: yellow;
+}
+
+::selection {
+    background:  rgb(186, 186, 209);
+    color: white;
+}
+
+::-moz-selection {
+    background:  rgb(186, 186, 209);
+    color: white;
 }
