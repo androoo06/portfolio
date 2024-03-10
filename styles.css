@@ -116,7 +116,7 @@ a:hover {
     background-color: black; 
 
     text-align: center;
-    line-height: 4vh;
+    line-height: 3.45vh;
 }
 
 .project-title {
@@ -124,23 +124,38 @@ a:hover {
     font-weight: bold;
     color: rgb(218, 216, 229);
 
-    padding-left: 2%;
+    padding-left: 2.5%;
     text-align: left;
-    line-height: 2em;
+    line-height: 3.5vh;
     
     background-color: blue;
 }
 
 .project-desc {
-    padding-left: 2%;
+    padding-left: 2.5%;
     text-align: left;
     font-size: 2vh;
 
     background-color: green;
+    display: flexbox;
 }
 
 .project-technologies {
-    background-color: yellow;
+    background-color: black;
+    display: inline-block;
+}
+
+.technology {
+    border-radius: 20px 20px 20px 20px;
+    background-color: red; /* 1f47874d */
+    /* min-width: 4vw; */
+    display: inline-grid;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    color: white;
+    font-weight: bold;
 }
 
 ::selection {
