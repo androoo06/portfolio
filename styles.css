@@ -16,6 +16,7 @@ a {
 
 a:hover {
     color: rgb(186, 186, 209);
+    cursor: pointer;
 }
 
 #mouse-gradient {
@@ -56,9 +57,9 @@ a:hover {
 }
 
 .size4 {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    color: rgba(223, 222, 234, 0.545);
+    color: rgba(223, 222, 234, 0.492);
     user-select: none;
 }
 
@@ -71,7 +72,6 @@ a:hover {
     top: 12.5%;
 
     /* background-color: blue; */
-    user-select: none;
 }
 
 #main-div {
@@ -95,13 +95,16 @@ a:hover {
     background-color: transparent;
 
     display: grid;
+    padding: 2.5%;
 
-    grid-template-rows: 20% 70% 10%;
+    /* grid-template-rows: 20% 70% 10%; */
     grid-template-columns: 25% 75%;
+    user-select: none;
 }
 
 .project-box:hover {
     background-color: #1f478729;
+    cursor: pointer;
 }
 
 .project-item {
@@ -109,13 +112,8 @@ a:hover {
 }
 
 .project-date {
-    /* position: inherit;
-    width: 100%;
-    height: 100%;*/
-
-    background-color: black; 
-
-    text-align: center;
+    padding-left: 2%;
+    text-align: left;
     line-height: 3.45vh;
 }
 
@@ -128,7 +126,7 @@ a:hover {
     text-align: left;
     line-height: 3.5vh;
     
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .project-desc {
@@ -136,26 +134,27 @@ a:hover {
     text-align: left;
     font-size: 2vh;
 
-    background-color: green;
+    /* background-color: green; */
     display: flexbox;
 }
 
 .project-technologies {
-    background-color: black;
+    /* background-color: black; */
+    padding-left: 2.5%;
     display: inline-block;
+    height: 100%;
 }
 
 .technology {
     border-radius: 20px 20px 20px 20px;
-    background-color: red; /* 1f47874d */
+    background-color: #364761b0; /* 1f47874d */
     /* min-width: 4vw; */
     display: inline-grid;
     text-align: center;
     padding-left: 2%;
     padding-right: 2%;
 
-    color: white;
-    font-weight: bold;
+    color: rgba(188, 182, 209, 0.934);
 }
 
 ::selection {
