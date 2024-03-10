@@ -6,6 +6,7 @@ html, body {
     background-color: #041836;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+    scroll-behavior: smooth;
     line-height: 1.25;
 }
 
@@ -64,9 +65,9 @@ a:hover {
 }
 
 #title-div {
-    position: absolute;
+    position: fixed;
     width: 35%;
-    height: 50%;
+    height: 25%;
 
     left: 15%;
     top: 12.5%;
@@ -86,6 +87,42 @@ a:hover {
 
     /* background-color: red; */
 }
+
+#sections-div {
+    position: fixed;
+    width: 35%;
+    height: 50%;
+
+    left: 15%;
+    top: 45%;
+
+    background-color: black;
+}
+
+.section-barrier {
+    margin-bottom: 4px;
+    height: 2px;
+    width: 35px;
+    background-color: rgba(223, 222, 234, 0.492);
+
+    display: inline-block;
+}
+
+.section-title {
+    color: rgba(223, 222, 234, 0.492);
+    font-size: small;
+    font-weight: bolder;
+
+    display: inline-block;
+}
+
+.section-title-parent {
+    max-width: 30%;
+}
+
+/* #section-ABOUT:hover {
+    background-color: yellow;
+} */
 
 .project-box {
     width: 100%;
@@ -155,6 +192,12 @@ a:hover {
     padding-right: 2%;
 
     color: rgba(188, 182, 209, 0.934);
+}
+
+.barrier {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(212, 210, 224, 0.362);
 }
 
 ::selection {

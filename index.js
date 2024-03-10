@@ -1,9 +1,13 @@
 $(function () {
+
+
     // $('#myButton').click(function() {
     //     $('html, body').animate({
     //         scrollTop: $("#myDiv").offset().top
     //     }, 2000);
     // });
+
+    // $()
 })
 
 // mouse gradient
