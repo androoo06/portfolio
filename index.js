@@ -60,6 +60,14 @@ $(function () {
         }
     })
 
+    $('.project-box').on("mouseover", function(event) {
+        if (event.target.classList.contains("project-box")) {
+            $(`.project-box:not(#${event.target.id})`).css("opacity", 0.5)
+        }
+    }).on("mouseleave", function() {
+        $('.project-box').css("opacity", 1)
+    })
+
     document.querySelectorAll(".section-title-parent").forEach((parent) => {
         parent.onmouseenter = setSelected
         parent.onmouseleave = removeSelected

@@ -159,6 +159,7 @@ a:hover {
     /* grid-template-rows: 20% 70% 10%; */
     grid-template-columns: 25% 75%;
     user-select: none;
+    transition: opacity 0.25s ease;
 }
 
 .project-box:hover {
