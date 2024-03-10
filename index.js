@@ -1,5 +1,32 @@
 let openTab = "ABOUT"
 
+function setSelected(event) {
+    let id = event.target.id.split("-")[1]
+
+    let title = document.getElementById(`section-title-${id}`)
+    let barrier = document.getElementById(`section-barrier-${id}`)
+
+    title.classList.remove("closed-section-title")
+    barrier.classList.remove("closed-section-barrier")
+    
+    title.classList.add("open-section-title")
+    barrier.classList.add("open-section-barrier")
+}
+
+function removeSelected(event) {
+    let id = event.target.id.split("-")[1]
+    let title = document.getElementById(`section-title-${id}`)
+    let barrier = document.getElementById(`section-barrier-${id}`)
+
+    if (id !== openTab) {
+        title.classList.remove("open-section-title")
+        barrier.classList.remove("open-section-barrier")
+        
+        title.classList.add("closed-section-title")
+        barrier.classList.add("closed-section-barrier")
+    }
+}
+
 $(function () {
     // $('#myButton').click(function() {
     //     $('html, body').animate({
@@ -8,13 +35,20 @@ $(function () {
     // });
 
     document.querySelectorAll(".section-title-parent").forEach((parent) => {
-        parent.onmouseenter = function(event) {
+        parent.onmouseenter = setSelected
+        parent.onmouseleave = removeSelected
 
-            
+        parent.onclick = function(event) {
+            setSelected({
+                "target": {"id": `$-${event.target.id.split("-")[2]}`}
+            })
 
-        }
-        parent.onmouseleave = function(event) {
+            let temp = openTab
+            openTab = event.target.id.split("-")[2]
 
+            removeSelected({
+                "target": {"id": `$-${temp}`}
+            })
         }
     })
 })
