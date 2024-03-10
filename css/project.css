@@ -1,0 +1,70 @@
+.project-box {
+    width: 100%;
+    /* aspect-ratio: 2; */
+
+    border-radius: 2% 2% 2% 2%;
+    background-color: transparent;
+
+    display: grid;
+    padding: 2.5%;
+
+    /* grid-template-rows: 20% 70% 10%; */
+    grid-template-columns: 25% 75%;
+    user-select: none;
+    transition: opacity 0.25s ease;
+}
+
+.project-box:hover {
+    background-color: var(--project-hover);
+    cursor: pointer;
+}
+
+.project-item {
+    display: inline-grid;
+}
+
+.project-date {
+    padding-left: 2%;
+    text-align: left;
+    line-height: 3.45vh;
+}
+
+.project-title {
+    font-size: 2.35vh;
+    font-weight: bold;
+    color: var(--secondary-white);
+
+    padding-left: 2.5%;
+    text-align: left;
+    line-height: 3.5vh;
+    
+    /* background-color: blue; */
+}
+
+.project-desc {
+    padding-left: 2.5%;
+    text-align: left;
+    font-size: 2vh;
+
+    /* background-color: green; */
+    display: flexbox;
+}
+
+.project-technologies {
+    /* background-color: black; */
+    padding-left: 2.5%;
+    display: inline-block;
+    height: 100%;
+}
+
+.technology {
+    border-radius: 20px 20px 20px 20px;
+    background-color: var(--technology-bg-color);
+    /* min-width: 4vw; */
+    display: inline-grid;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    color: var(--technology-text-color);
+}

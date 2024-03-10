@@ -27,20 +27,7 @@ function autoSetSelected(tab) {
 }
 
 $(function () {
-    $(window).on('scroll', function () {
-        let about = $('#about').offset().top - window.innerHeight
-        let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
-        let experience = $('#experience').offset().top - window.innerHeight
-
-        if ($(window).scrollTop() >= experience) {
-            autoSetSelected("EXPERIENCE")
-        } else if ($(window).scrollTop() >= projects) {
-            autoSetSelected("PROJECTS")
-        } else if ($(window).scrollTop() >= about) {
-            autoSetSelected("ABOUT")
-        }
-    })
-
+    // project hovers
     $(document).on("scrollend", function() {
         let hoverOver = $('.project-box:hover')
         if (hoverOver.length != 0) {
@@ -48,7 +35,6 @@ $(function () {
             $(`#${hoverOver[0].id}`).css("opacity", 1)
         }
     })
-
     $('.project-box').on("mouseover", function(event) {
         if (event.target.classList.contains("project-box")) {
             $(`.project-box:not(#${event.target.id})`).css("opacity", 0.5)
@@ -63,9 +49,31 @@ $(function () {
         }, 100)
     })
 
+    // automatic section title changes
+    $(window).on('scroll', function () {
+        let about = $('#about').offset().top - window.innerHeight
+        let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
+        let experience = $('#experience').offset().top - window.innerHeight
+
+        if ($(window).scrollTop() >= experience) {
+            autoSetSelected("EXPERIENCE")
+        } else if ($(window).scrollTop() >= projects) {
+            autoSetSelected("PROJECTS")
+        } else if ($(window).scrollTop() >= about) {
+            autoSetSelected("ABOUT")
+        }
+    })
+
+    // section title hovers
     $(".section-title-parent")
         .on("mouseover", (e)=>changeSelected(e, true))
         .on("mouseleave", (e)=>changeSelected(e, false))
+
+    //
+    $(".project-box").on("click", function() {
+        let target = $(this).closest('.project-box')[0]
+        console.log(target)
+    })
 })
 
 // mouse gradient

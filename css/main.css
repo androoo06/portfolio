@@ -1,0 +1,44 @@
+@import url(other.css);
+@import url(project.css);
+@import url(sections.css);
+@import url(sizes.css);
+
+:root {
+    --bg-color: #041836;
+    --selection-color: rgb(186, 186, 209);
+    --white: white;
+
+    --main-white: rgb(231, 230, 241);
+    --secondary-white: rgb(218, 216, 229);
+    --faded-white: rgba(223, 222, 234, 0.712);
+    --faded-white-2: rgba(223, 222, 234, 0.492);
+    --project-hover: #1f478729;
+
+    --technology-bg-color: #364761b0;
+    --technology-text-color: rgba(188, 182, 209, 0.934);
+
+    --barrier-color:rgba(212, 210, 224, 0.362);
+    --mouse-gradient-color: #0c56ce3b;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--bg-color);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    scroll-behavior: smooth;
+    line-height: 1.25;
+}
+
+::selection {
+    background: var(--selection-color);
+    color: var(--white);
+}
+
+::-moz-selection {
+    background: var(--selection-color);
+    color: var(--white);
+}

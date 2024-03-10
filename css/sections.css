@@ -1,0 +1,54 @@
+#sections-div {
+    position: fixed;
+    width: 35%;
+    height: 50%;
+
+    left: 15%;
+    top: 40%;
+
+    line-height: 4.5vh;
+
+    /* background-color: black; */
+}
+
+.open-section-title {
+    color: rgb(218, 216, 229) !important;
+    transition: all 0.2s ease !important;
+}
+
+
+.open-section-barrier {
+    width: 50px !important;
+    background-color: rgb(218, 216, 229) !important;
+    transition: all 0.2s ease !important;
+}
+
+.section-barrier {
+    margin-bottom: 4px;
+    height: 2px;
+    
+    display: inline-block;
+
+    width: 35px;
+    background-color: var(--faded-white-2);
+    transition: all 0.2s ease;
+}
+
+.section-title {
+    font-size: small;
+    font-weight: bolder;
+
+    display: inline-block;
+
+    color: var(--faded-white-2);
+    transition: all 0.2s ease;
+}
+
+.section-title-parent {
+    max-width: 30%;
+    transition: all 0.25s ease;
+}
+
+/* #section-ABOUT:hover {
+    background-color: yellow;
+} */

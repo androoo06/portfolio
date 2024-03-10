@@ -1,0 +1,58 @@
+#mouse-gradient {
+    height: 100%;
+    width: 100%;
+
+    background-image: radial-gradient(
+        circle farthest-side at var(--x, 20px) var(--y, 20px),
+        var(--mouse-gradient-color) 0%,
+        transparent 10% 
+    );
+
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    z-index: 99;
+    pointer-events: none;
+}
+
+#title-div {
+    position: fixed;
+    width: 35%;
+    height: 25%;
+
+    left: 15%;
+    top: 12.5%;
+
+    /* background-color: blue; */
+}
+
+#main-div {
+    position: absolute;
+    width: 35%;
+    height: auto;
+
+    left: 50%;
+    top: 12.5%;
+
+    line-height: 1.6;
+
+    /* background-color: red; */
+}
+
+.barrier {
+    width: 100%;
+    height: 1px;
+    background-color: var(--barrier-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+a:hover {
+    color: var(--selection-color);
+    cursor: pointer;
+}

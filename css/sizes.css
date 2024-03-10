@@ -1,0 +1,24 @@
+.size1 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: var(--main-white);
+}
+
+.size2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-white);
+}
+
+.size3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--faded-white);
+}
+
+.size4 {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--faded-white-2);
+    user-select: none;
+}
