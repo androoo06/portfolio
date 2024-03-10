@@ -1,95 +1,75 @@
 let openTab = "ABOUT"
+let hovering = false;
 
-function setSelected(event) {
+function changeSelected(event, bool) {
+    let classList = Array.from(event.target.classList)
+    if (!(classList.includes("section-title-parent"))) {
+        return "selected a child element"
+    }
+
     let id = event.target.id.split("-")[1]
-    let title = document.getElementById(`section-title-${id}`)
-    let barrier = document.getElementById(`section-barrier-${id}`)
 
-    try{
-        title.classList.remove("closed-section-title")
-        barrier.classList.remove("closed-section-barrier")
-    } catch (e) {}
-    
-    title.classList.add("open-section-title")
-    barrier.classList.add("open-section-barrier")
-}
-
-function removeSelected(event) {
-    let id = event.target.id.split("-")[1]
-    let title = document.getElementById(`section-title-${id}`)
-    let barrier = document.getElementById(`section-barrier-${id}`)
-
-    if (id !== openTab) {
-        try{
-            title.classList.remove("open-section-title")
-            barrier.classList.remove("open-section-barrier")    
-        } catch (e) {}
-       
-        title.classList.add("closed-section-title")
-        barrier.classList.add("closed-section-barrier")
+    // set selected to open, or set it to closed if it's not the current openTab
+    if (bool || (id !== openTab)) {
+        Array.from(["title", "barrier"]).forEach((t) => {
+            $(`#section-${t}-${id}`).toggleClass(`open-section-${t}`, bool)
+        })
     }
 }
 
-$(function () {
-    // $('#myButton').click(function() {
-    //     $('html, body').animate({
-    //         scrollTop: $("#myDiv").offset().top
-    //     }, 2000);
-    // });
+function autoSetSelected(tab) {
+    changeSelected({"target": {"id": `$-${tab}`, "classList": ["section-title-parent"]}}, true)
 
+    let temp = openTab
+    openTab = tab
+
+    changeSelected({"target": {"id": `$-${temp}`, "classList": ["section-title-parent"]}}, false)
+}
+
+$(function () {
     $(window).on('scroll', function () {
         let about = $('#about').offset().top - window.innerHeight
         let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
         let experience = $('#experience').offset().top - window.innerHeight
 
-        function set(tab) {
-            setSelected({"target": {"id": `$-${tab}`}})
-
-            let temp = openTab
-            openTab = tab
-
-            removeSelected({"target": {"id": `$-${temp}`}})
-        }
-
         if ($(window).scrollTop() >= experience) {
-            set("EXPERIENCE")
+            autoSetSelected("EXPERIENCE")
         } else if ($(window).scrollTop() >= projects) {
-            set("PROJECTS")
+            autoSetSelected("PROJECTS")
         } else if ($(window).scrollTop() >= about) {
-            set("ABOUT")
+            autoSetSelected("ABOUT")
+        }
+    })
+
+    $(document).on("scrollend", function() {
+        let hoverOver = $('.project-box:hover')
+        if (hoverOver.length != 0) {
+            $(`.project-box:not(#${hoverOver[0].id})`).css("opacity", 0.5)
+            $(`#${hoverOver[0].id}`).css("opacity", 1)
         }
     })
 
     $('.project-box').on("mouseover", function(event) {
         if (event.target.classList.contains("project-box")) {
             $(`.project-box:not(#${event.target.id})`).css("opacity", 0.5)
+            $(`#${event.target.id}`).css("opacity", 1)
         }
     }).on("mouseleave", function() {
-        $('.project-box').css("opacity", 1)
+        setTimeout(() => {
+            let hoverOver = $('.project-box:hover')
+            if (hoverOver.length == 0) {
+                $(`.project-box`).css("opacity", 1)
+            }
+        }, 100)
     })
 
-    document.querySelectorAll(".section-title-parent").forEach((parent) => {
-        parent.onmouseenter = setSelected
-        parent.onmouseleave = removeSelected
-
-        // parent.onclick = function(event) {
-        //     setSelected({"target": {"id": `$-${event.target.id.split("-")[2]}`}})
-
-        //     let temp = openTab
-        //     openTab = event.target.id.split("-")[2]
-
-        //     removeSelected({"target": {"id": `$-${temp}`}})
-        // }
-    })
+    $(".section-title-parent")
+        .on("mouseover", (e)=>changeSelected(e, true))
+        .on("mouseleave", (e)=>changeSelected(e, false))
 })
 
 // mouse gradient
 $(document).on("mousemove", function( e ) {
-    // var relativePosition = {
-    //     left: e.pageX - $(document).scrollLeft() - $('body').offset().left,
-    //     top:  e.pageY - $(document).scrollTop()  - $('body').offset().top
-    // };
-
     var relativePosition = {
         left: e.clientX,
         top: e.clientY

@@ -102,25 +102,15 @@ a:hover {
 }
 
 .open-section-title {
-    color: rgb(218, 216, 229);
-    transition: all 0.2s ease;
+    color: rgb(218, 216, 229) !important;
+    transition: all 0.2s ease !important;
 }
 
-.closed-section-title {
-    color: rgba(223, 222, 234, 0.492);
-    transition: all 0.2s ease;
-}
 
 .open-section-barrier {
-    width: 50px;
-    background-color: rgb(218, 216, 229);
-    transition: all 0.2s ease;
-}
-
-.closed-section-barrier {
-    width: 35px;
-    background-color: rgba(223, 222, 234, 0.492);
-    transition: all 0.2s ease;
+    width: 50px !important;
+    background-color: rgb(218, 216, 229) !important;
+    transition: all 0.2s ease !important;
 }
 
 .section-barrier {
@@ -128,6 +118,10 @@ a:hover {
     height: 2px;
     
     display: inline-block;
+
+    width: 35px;
+    background-color: rgba(223, 222, 234, 0.492);
+    transition: all 0.2s ease;
 }
 
 .section-title {
@@ -135,6 +129,9 @@ a:hover {
     font-weight: bolder;
 
     display: inline-block;
+
+    color: rgba(223, 222, 234, 0.492);
+    transition: all 0.2s ease;
 }
 
 .section-title-parent {
