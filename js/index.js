@@ -32,17 +32,14 @@ $(function () {
         }
     })
     $('.project-box').on("mouseover", function(event) {
-        if (event.target.classList.contains("project-box")) {
-            $(`.project-box:not(#${event.target.id})`).css("opacity", 0.5)
-            $(`#${event.target.id}`).css("opacity", 1)
-        }
+        let element = $(event.target).closest(".project-box")[0]
+        $(`.project-box:not(#${element.id})`).css("opacity", 0.5)
+        $(`#${element.id}`).css("opacity", 1)
     }).on("mouseleave", function() {
-        setTimeout(() => {
-            let hoverOver = $('.project-box:hover')
-            if (hoverOver.length == 0) {
-                $(`.project-box`).css("opacity", 1)
-            }
-        }, 100)
+        let hoverOver = $('.project-box:hover')
+        if (hoverOver.length == 0) {
+            $(`.project-box`).css("opacity", 1)
+        }
     })
 
     // automatic section title changes

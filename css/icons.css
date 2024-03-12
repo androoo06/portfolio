@@ -2,10 +2,11 @@
     position: absolute;
     width: 100%;
     /* background-color: white; */
+    z-index: 100;
 }
 
 ul {
-    background-color: blue;
+    /* background-color: blue; */
     list-style-type: none;
     padding: 0;
 }
