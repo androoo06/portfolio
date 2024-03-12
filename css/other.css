@@ -23,13 +23,6 @@
     display: block;
 }
 
-.barrier {
-    width: 100%;
-    height: 2px;
-    background-color: var(--barrier-color);
-    /* background-color: red; */
-}
-
 a {
     text-decoration: none;
     color: var(--main-white);

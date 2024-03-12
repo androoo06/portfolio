@@ -1,0 +1,29 @@
+.barrier {
+    width: 100%;
+    height: 2px;
+    background-color: var(--barrier-color);
+    color: white;
+    /* background-color: red; */
+}
+
+.mobile-barrier {
+    display: none;
+
+    width: 100%;
+    height: 30px;
+    color: var(--secondary-white);
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* background-color: red; */
+}
+
+.half-barrier {
+    max-width: 37.5%;
+    /* background-color: yellow; */
+}
+
+.mobile-section-title {
+    width: 25%;
+    font-size: 3vw;
+    /* background-color: green; */
+}

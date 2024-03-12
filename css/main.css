@@ -5,6 +5,7 @@
 @import url(other.css);
 @import url(title.css);
 @import url(icons.css);
+@import url(barriers.css);
 
 :root {
     --bg-color: #041836;

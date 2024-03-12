@@ -81,4 +81,11 @@
     #mouse-gradient {
         display: none !important;
     }
+
+    #barrier-1, #barrier-2 {
+        display: none;
+    }
+    #mobile-barrier-1, #mobile-barrier-2 {
+        display: table;
+    }
 }
