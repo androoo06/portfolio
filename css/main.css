@@ -1,7 +1,9 @@
-@import url(other.css);
+@import url(layout.css);
 @import url(project.css);
 @import url(sections.css);
 @import url(sizes.css);
+@import url(other.css);
+@import url(title.css);
 
 :root {
     --bg-color: #041836;
@@ -23,14 +25,43 @@
 
 html, body {
     margin: 0;
-    height: 100%;
-    width: 100%;
 
     background-color: var(--bg-color);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     scroll-behavior: smooth;
-    line-height: 1.25;
+}
+
+.sticky {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    /* background-color: transparent; */
+}
+
+.pad40 {
+    padding-top: 40%;
+}
+
+.pad60 {
+    padding-top: 60%;
+}
+
+.padscale {
+    padding-top: calc(1/vh);
+}
+
+.-top{
+    top: 0;
+    align-self: flex-start;
+}
+
+.-bottom{
+    bottom: 6rem;
+    align-self: flex-end;
+}
+
+.-black {
+    filter: invert() brightness(1) opacity(0.5);
 }
 
 ::selection {

@@ -1,0 +1,15 @@
+#title-div {
+    background-color: transparent;
+}
+
+#title-div > * {
+    width: 100%;
+    float: left;
+    text-align: left;
+
+    /* background-color: blue; */
+}
+
+.pad-top {
+    padding-top: 4%;
+}

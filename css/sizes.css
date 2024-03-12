@@ -22,3 +22,9 @@
     color: var(--faded-white-2);
     user-select: none;
 }
+
+.fs2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 3.45vh;
+}

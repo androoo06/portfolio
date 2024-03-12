@@ -1,17 +1,24 @@
 .project-box {
     width: 100%;
+    max-width: 100%;
     /* aspect-ratio: 2; */
 
-    border-radius: 2% 2% 2% 2%;
-    background-color: transparent;
+    border-radius: 3% 3% 3% 3%;
+    /* background-color: red; */
 
     display: grid;
-    padding: 2.5%;
+    padding: 1.5%;
 
-    /* grid-template-rows: 20% 70% 10%; */
+    /* grid-template-rows: minmax(5%, auto) minmax(75%, auto) minmax(5%, auto); */
+
+    grid-template-rows: max-content max-content max-content;
     grid-template-columns: 25% 75%;
     user-select: none;
     transition: opacity 0.25s ease;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .project-box:hover {
@@ -20,31 +27,49 @@
 }
 
 .project-item {
-    display: inline-grid;
+    display: flexbox;
+    align-items: center;
 }
+
+/* .project-item:nth-child(n) {
+    background-color: teal;
+}
+
+.project-item:nth-child(2n) {
+    background-color: black;
+}
+
+.project-item:nth-child(3n) {
+    background-color: black;
+}
+
+.project-item:nth-child(4n) {
+    background-color: teal;
+} */
 
 .project-date {
     padding-left: 2%;
     text-align: left;
     line-height: 3.45vh;
+
+    /* background-color: black; */
 }
 
 .project-title {
-    font-size: 2.35vh;
     font-weight: bold;
     color: var(--secondary-white);
 
     padding-left: 2.5%;
     text-align: left;
-    line-height: 3.5vh;
     
+    max-height: 15%;
     /* background-color: blue; */
 }
 
 .project-desc {
-    padding-left: 2.5%;
+    padding: 2.5%;
     text-align: left;
-    font-size: 2vh;
+    font-size: 1.5rem;
 
     /* background-color: green; */
     display: flexbox;
@@ -60,7 +85,7 @@
 .technology {
     border-radius: 20px 20px 20px 20px;
     background-color: var(--technology-bg-color);
-    /* min-width: 4vw; */
+
     display: inline-grid;
     text-align: center;
     padding-left: 2%;
@@ -68,14 +93,15 @@
 
     color: var(--technology-text-color);
 }
-
+ 
 .open-in-new {
     width: 35px;
     aspect-ratio: 1;
     
     position: absolute;
-    right:0px;
+    right: 0px;
 
     user-select: none;
+    padding-right: 10px;
     /* background-color: red; */
 }

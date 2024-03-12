@@ -2,12 +2,8 @@ let openTab = "ABOUT"
 let hovering = false;
 
 function changeSelected(event, bool) {
-    let classList = Array.from(event.target.classList)
-    if (!(classList.includes("section-title-parent"))) {
-        return "selected a child element"
-    }
-
-    let id = event.target.id.split("-")[1]
+    let element = $(event.target).closest(".section-title-parent")[0]
+    let id = element.id.split("-")[1]
 
     // set selected to open, or set it to closed if it's not the current openTab
     if (bool || (id !== openTab)) {
@@ -18,12 +14,12 @@ function changeSelected(event, bool) {
 }
 
 function autoSetSelected(tab) {
-    changeSelected({"target": {"id": `$-${tab}`, "classList": ["section-title-parent"]}}, true)
+    changeSelected({"target": document.getElementById(`section-${tab}`)}, true)
 
     let temp = openTab
     openTab = tab
 
-    changeSelected({"target": {"id": `$-${temp}`, "classList": ["section-title-parent"]}}, false)
+    changeSelected({"target": document.getElementById(`section-${temp}`)}, false)
 }
 
 $(function () {
@@ -51,7 +47,7 @@ $(function () {
 
     // automatic section title changes
     $(window).on('scroll', function () {
-        let about = $('#about').offset().top - window.innerHeight
+        let about = $('#sections-div').offset().top - window.innerHeight
         let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
         let experience = $('#experience').offset().top - window.innerHeight
 

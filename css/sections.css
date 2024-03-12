@@ -1,12 +1,7 @@
 #sections-div {
-    position: fixed;
-    width: 35%;
-    height: 50%;
+    line-height: 2rem;
 
-    left: 15%;
-    top: 40%;
-
-    line-height: 4.5vh;
+    text-align: left;
 
     /* background-color: black; */
 }
@@ -15,7 +10,6 @@
     color: rgb(218, 216, 229) !important;
     transition: all 0.2s ease !important;
 }
-
 
 .open-section-barrier {
     width: 50px !important;
@@ -47,6 +41,31 @@
 .section-title-parent {
     max-width: 30%;
     transition: all 0.25s ease;
+}
+
+#icons-row {
+    position: absolute;
+    width: 100%;
+    /* background-color: white; */
+}
+
+ul {
+    background-color: blue;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    float: left;
+    /* background-color: yellow; */
+    display: inline;
+    aspect-ratio: 1;
+}
+
+li > a > img {
+    /* background-color: red; */
+    aspect-ratio: 1;
+    height: 2.5rem;
 }
 
 /* #section-ABOUT:hover {
