@@ -1,0 +1,24 @@
+#icons-row {
+    position: absolute;
+    width: 100%;
+    /* background-color: white; */
+}
+
+ul {
+    background-color: blue;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    float: left;
+    /* background-color: yellow; */
+    display: inline;
+    aspect-ratio: 1;
+}
+
+li > a > img {
+    /* background-color: red; */
+    aspect-ratio: 1;
+    height: 2.5rem;
+}

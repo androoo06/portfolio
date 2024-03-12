@@ -77,4 +77,8 @@
         top: 20% !important;
         position: relative !important;
     }
+
+    #mouse-gradient {
+        display: none !important;
+    }
 }
