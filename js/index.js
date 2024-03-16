@@ -81,6 +81,12 @@ $(function () {
             }, 500)
         }
     })
+
+    $(document).delegate("a", "click", function() {
+        if (this.hasClass("go-back-a")) {
+            console.log('aaaa!')
+        }
+    })
 })
 
 // mouse gradient

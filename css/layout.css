@@ -55,13 +55,13 @@
     height: 5rem;
 }
 
-/* #project-view {
-    display: none;
-} */
-
-#right {
+#project-view {
     display: none;
 }
+/* 
+#right {
+    display: none;
+} */
 
 @media screen and (max-width: 1027px) {
     #left {
