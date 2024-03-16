@@ -9,6 +9,7 @@ iframe {
 
 .project-page {
     display: none;
+    visibility: inherit;
 }
 
 .go-back-icon {

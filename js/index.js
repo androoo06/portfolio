@@ -1,5 +1,6 @@
-let openTab = "ABOUT"
+let openTab = "ABOUT" // PROJECTS, EXPERIENCE
 let hovering = false;
+let openMenu = "home"; // project-view
 
 function changeSelected(event, bool) {
     let element = $(event.target).closest(".section-title-parent")[0]
@@ -20,6 +21,43 @@ function autoSetSelected(tab) {
     openTab = tab
 
     changeSelected({"target": document.getElementById(`section-${temp}`)}, false)
+}
+
+function switchMenu(menu, projName=null) {
+    let visibleColumn = (menu == "home") ? $("#project-view") : $("#right")
+    let hiddenColumn = (menu == "home") ? $("#right") : $("#project-view")
+    
+    let visibleSectionDiv = (menu == "home") ? $("#return-div") : $("#sections-div")
+    let hiddenSectionDiv = (menu == "home") ? $("#sections-div") : $("#return-div")
+
+    visibleColumn.css("opacity", 0)
+    hiddenColumn.css("opacity", 0)
+
+    visibleSectionDiv.css("opacity", 0)
+    hiddenSectionDiv.css("opacity", 0)
+
+    setTimeout(()=> {
+        visibleColumn.css("display", "none")
+        hiddenColumn.css("display", "flex")
+        
+        if (projName != null) {
+            $(`.project-page:not(#project-${projName})`).css("display", "none")
+            $(`#project-${projName}`).css("display", "block")
+        }
+
+        // the constraint is -- don't show this stuff on mobile view
+        if (((menu != "home") && ($("#sections-div").css("display") != "none")) || (menu == "home")) {
+            visibleSectionDiv.css("display", "none")
+            hiddenSectionDiv.css("display", "block")
+        }
+    }, 500)
+
+    setTimeout(()=> {
+        hiddenColumn.css("opacity", 1)
+        hiddenSectionDiv.css("opacity", 1)
+    }, 750)
+
+    openMenu = menu
 }
 
 $(function () {
@@ -44,6 +82,8 @@ $(function () {
 
     // automatic section title changes
     $(window).on('scroll', function () {
+        if (openMenu != "home") return;
+
         let about = $('#sections-div').offset().top - window.innerHeight
         let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
         let experience = $('#experience').offset().top - window.innerHeight
@@ -68,17 +108,8 @@ $(function () {
         if (target.find(".open-in-new").length != 0) {
             // window.open(target[0].dataset.externallink, '_blank').focus()
 
-            $('#right')[0].style.setProperty("opacity", 0);
-
-            setTimeout(()=> {
-                $("#right")[0].style.setProperty("display", "none")
-            }, 250)
-
-            $('#project-view')[0].style.setProperty("opacity", 1);
-
-            setTimeout(()=> {
-                $("#project-view")[0].style.setProperty("display", "flex")
-            }, 500)
+            let projName = target[0].dataset.projname
+            switchMenu("project-view", projName=projName)
         }
     })
 
@@ -96,6 +127,6 @@ $(document).on("mousemove", function( e ) {
         top: e.clientY
     }
 
-    $('#mouse-gradient')[0].style.setProperty("--x", `${relativePosition.left}px`)
-    $('#mouse-gradient')[0].style.setProperty("--y", `${relativePosition.top}px`)
+    $('#mouse-gradient').css("--x", `${relativePosition.left}px`)
+    $('#mouse-gradient').css("--y", `${relativePosition.top}px`)
 })

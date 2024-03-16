@@ -3,6 +3,7 @@
     text-align: left;
 
     /* background-color: black; */
+    transition: opacity 0.5s ease;
 }
 
 .open-section-title {
