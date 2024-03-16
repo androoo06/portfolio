@@ -1,0 +1,21 @@
+h1 {
+    color: var(--main-white);
+}
+
+iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+.project-page {
+    display: none;
+}
+
+.go-back {
+    display: inline;
+    aspect-ratio: 1;
+    float: right;
+
+    height: 2rem;
+    /* background-color: yellow; */
+}

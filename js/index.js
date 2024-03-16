@@ -66,7 +66,19 @@ $(function () {
     $(".project-box").on("click", function() {
         let target = $(this).closest('.project-box')
         if (target.find(".open-in-new").length != 0) {
-            window.open(target[0].dataset.externallink, '_blank').focus()
+            // window.open(target[0].dataset.externallink, '_blank').focus()
+
+            $('#right')[0].style.setProperty("opacity", 0);
+
+            setTimeout(()=> {
+                $("#right")[0].style.setProperty("display", "none")
+            }, 250)
+
+            $('#project-view')[0].style.setProperty("opacity", 1);
+
+            setTimeout(()=> {
+                $("#project-view")[0].style.setProperty("display", "flex")
+            }, 500)
         }
     })
 })

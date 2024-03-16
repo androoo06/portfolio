@@ -37,7 +37,7 @@
     /* background-color: green; */
 }
 
-#right {
+.right {
     height: 100%;
     width: 50%;
     display: flex;
@@ -46,11 +46,21 @@
 
     line-height: 1.65rem;
     overflow: hidden;
+
+    transition: opacity 0.25s ease;
 }
 
 .empty {
     position: relative;
     height: 5rem;
+}
+
+/* #project-view {
+    display: none;
+} */
+
+#right {
+    display: none;
 }
 
 @media screen and (max-width: 1027px) {
@@ -60,8 +70,8 @@
         height: max-content;
     }
     
-    #left, #right {
-       width: 100%;
+    #left, .right {
+       width: 100% !important;
     }
 
     #main {

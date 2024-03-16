@@ -6,6 +6,7 @@
 @import url(title.css);
 @import url(icons.css);
 @import url(barriers.css);
+@import url(project-view.css);
 
 :root {
     --bg-color: #041836;
