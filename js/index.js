@@ -2,6 +2,8 @@ let openTab = "ABOUT" // PROJECTS, EXPERIENCE
 let hovering = false;
 let openMenu = "home"; // project-view
 
+let scrollY = 0
+
 function changeSelected(event, bool) {
     let element = $(event.target).closest(".section-title-parent")[0]
     let id = element.id.split("-")[1]
@@ -24,6 +26,10 @@ function autoSetSelected(tab) {
 }
 
 function switchMenu(menu, projName=null) {
+    if (menu != "home") {
+        scrollY = window.scrollY
+    }
+
     let visibleColumn = (menu == "home") ? $("#project-view") : $("#right")
     let hiddenColumn = (menu == "home") ? $("#right") : $("#project-view")
     
@@ -46,7 +52,8 @@ function switchMenu(menu, projName=null) {
         }
 
         // the constraint is -- don't show this stuff on mobile view
-        if (((menu != "home") && ($("#sections-div").css("display") != "none")) || (menu == "home")) {
+        if (((menu != "home") && ($("#sections-div").css("display") != "none")) 
+        || ((menu == "home") && ($("#return-div").css("display") != "none"))) {
             visibleSectionDiv.css("display", "none")
             hiddenSectionDiv.css("display", "block")
         }
@@ -57,10 +64,22 @@ function switchMenu(menu, projName=null) {
         hiddenSectionDiv.css("opacity", 1)
     }, 750)
 
+    setTimeout(() => {
+        let scrollTo = (menu == "home") ? scrollY : 0 
+        window.scroll({
+            top: scrollTo
+        })
+    }, 1250)
+
     openMenu = menu
 }
 
 $(function () {
+    let about = $('#sections-div').offset().top - window.innerHeight
+    let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
+    let experience = $('#experience').offset().top - window.innerHeight
+    // hrefHeights = {"projects": projects, "experience": experience}
+
     // project hovers
     $(document).on("scrollend", function() {
         let hoverOver = $('.project-box:hover')
@@ -83,10 +102,6 @@ $(function () {
     // automatic section title changes
     $(window).on('scroll', function () {
         if (openMenu != "home") return;
-
-        let about = $('#sections-div').offset().top - window.innerHeight
-        let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
-        let experience = $('#experience').offset().top - window.innerHeight
 
         if ($(window).scrollTop() >= experience) {
             autoSetSelected("EXPERIENCE")
@@ -114,8 +129,8 @@ $(function () {
     })
 
     $(document).delegate("a", "click", function() {
-        if (this.hasClass("go-back-a")) {
-            console.log('aaaa!')
+        if ($(this).hasClass("go-back-a")) {
+            switchMenu("home")
         }
     })
 })
