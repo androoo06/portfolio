@@ -76,9 +76,12 @@ function switchMenu(menu, projName=null) {
 
 $(function () {
     let about = $('#sections-div').offset().top - window.innerHeight
-    let projects = $('#projects').offset().top + ($('#projects').outerHeight()) - window.innerHeight
     let experience = $('#experience').offset().top - window.innerHeight
-    // hrefHeights = {"projects": projects, "experience": experience}
+    let projects = $('#project-animelle').offset().top + ($('#project-animelle').outerHeight()) - window.innerHeight
+
+    console.log(about)
+    console.log(experience)
+    console.log(projects)
 
     // project hovers
     $(document).on("scrollend", function() {
@@ -101,12 +104,13 @@ $(function () {
 
     // automatic section title changes
     $(window).on('scroll', function () {
+        console.log($(window).scrollTop());
         if (openMenu != "home") return;
 
-        if ($(window).scrollTop() >= experience) {
-            autoSetSelected("EXPERIENCE")
-        } else if ($(window).scrollTop() >= projects) {
+        if ($(window).scrollTop() >= projects) {
             autoSetSelected("PROJECTS")
+        } else if ($(window).scrollTop() >= experience) {
+            autoSetSelected("EXPERIENCE")
         } else if ($(window).scrollTop() >= about) {
             autoSetSelected("ABOUT")
         }
@@ -131,6 +135,10 @@ $(function () {
     $(document).delegate("a", "click", function() {
         if ($(this).hasClass("go-back-a")) {
             switchMenu("home")
+        }
+        if ($(this)[0].dataset.highlightid){
+            let id = $(this)[0].dataset.highlightid // id to highlight
+            $(`#${id}`).effect("highlight", {color: 'rgb(186, 186, 209)'}, 2250);
         }
     })
 
