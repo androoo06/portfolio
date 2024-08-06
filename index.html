@@ -12,6 +12,7 @@
     <title>Andrew Miller's Portfolio</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script src="js/index.js" defer></script>
 </head>
 
@@ -24,28 +25,31 @@
                 <div class="empty block"></div>
 
                 <div id="title-div">
-                    <a href="#" class="size1" style="user-select: none;">Andrew Miller</a>
-                    <span class="block size2">Software Developer</span>
-                    <span class="block size3 pad-top">andrew.miller0810@gmail.com</span>
+                    <a class="size1" id="nametag" style="user-select: none;">
+                        Andrew Miller
+                        <img class="clamped-img" src="assets/me.jpg"/>
+                    </a>
+                    <span class="block size2 dd-hideable">Software Developer</span>
+                    <span class="block size3 pad-top dd-hideable" id="email">andrew.miller0810@gmail.com</span>
                 </div>
 
                 <div id="pad-1" class="pad40"></div>
 
-                <div id="sections-div" class="sections-div">
+                <div id="sections-div" class="sections-div dd-hideable">
                     <a href="#" id="section-ABOUT" class="section-title-parent">
                         <div class="section-barrier open-section-barrier" id="section-barrier-ABOUT"></div>
                         &nbsp;&nbsp;
                         <span class="section-title open-section-title" id="section-title-ABOUT">ABOUT</span><br>
                     </a>
-                    <a href="#projects" id="section-PROJECTS" class="section-title-parent">
-                        <div class="section-barrier" id="section-barrier-PROJECTS"></div>
-                        &nbsp;&nbsp;
-                        <span class="section-title" id="section-title-PROJECTS" class="">PROJECTS</span><br>
-                    </a>
                     <a href="#experience" id="section-EXPERIENCE" class="section-title-parent">
                         <div class="section-barrier" id="section-barrier-EXPERIENCE"></div>
                         &nbsp;&nbsp;
-                        <span class="section-title" id="section-title-EXPERIENCE" class="">EXPERIENCE</span>
+                        <span class="section-title" id="section-title-EXPERIENCE" class="">EXPERIENCE</span><br>
+                    </a>
+                    <a href="#projects" id="section-PROJECTS" class="section-title-parent">
+                        <div class="section-barrier" id="section-barrier-PROJECTS"></div>
+                        &nbsp;&nbsp;
+                        <span class="section-title" id="section-title-PROJECTS" class="">PROJECTS</span>
                     </a>
                 </div>
 
@@ -68,9 +72,11 @@
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" rel="noopener noreferrer" href="https://androoo06.github.io/portfolio/assets/Resume.pdf">
+                            <!-- <a target="_blank" rel="noopener noreferrer" href="https://androoo06.github.io/portfolio/assets/Resume.pdf"> -->
+                            <a id="resumeclicker">
                                 <img class="-black" src="assets/resume.svg"/>
-                            </a>
+                            </a>    
+                            <!-- </a> -->
                         </li>
                     </ul>
                 </div>
@@ -82,7 +88,7 @@
                 <div class="empty block"></div>
 
                 <div class="block size3">
-                    I'm a Computer Science student at the University of Central Florida, expected to graduate in August 2024. 
+                    I'm a Computer Science graduate from the University of Central Florida. 
                     I began programming in 8th grade when one of the electives I took taught the basics of python. 
                     In high school, I did programming for FTC and FRC robotics, helping a team make it to the FTC world championship in 2018.
                 </div>
@@ -94,7 +100,7 @@
                     contracting positions for
                     <!-- <a target="_blank" rel="noopener noreferrer" href="https://www.dissiax.com/">a startup company</a> -->
                     a startup company
-                    and multiple studios
+                    <!-- and multiple studios
                     (<a target="_blank" rel="noopener noreferrer"
                         href="https://www.roblox.com/groups/2742631/The-Galactic-Republic">1</a>,
                     <a target="_blank" rel="noopener noreferrer" href="https://www.roblox.com/groups/5665804/Snow-Core">2</a>,
@@ -102,10 +108,12 @@
                         href="https://www.roblox.com/groups/8358973/Xavs0s-Sports">3</a>,
                     <a target="_blank" rel="noopener noreferrer"
                         href="https://www.roblox.com/groups/7288086/Pro-Rugball-Organization">4</a>)
-                    on Roblox.
-                    I'm currently working on my Senior Design project for 
+                    on Roblox. -->
+                    and
+                    <a href="#project-2">multiple studios on Roblox.</a>
+                    I've most recently finished my Senior Design project for 
                     <a target="_blank" rel="noopener noreferrer"
-                        href="https://chdr.cs.ucf.edu/elle">ELLE</a>, improving and expanding on their systems.
+                        href="https://chdr.cs.ucf.edu/elle">ELLE</a>, deploying a language-learning game for UCF students starting Fall 2024.
                     I am most passionate about full-stack development, but am also highly interested in front-end software development, along with embedded systems and firmware engineering. I enjoy learning new technologies as well as sharpening my skills in the things I already know.
                 </div>
                 
@@ -123,6 +131,53 @@
 
                 <br><br>
                 <br><br>
+
+                <div class="barrier" id="barrier-2" style="display: none;"></div>
+
+                <table id="mobile-barrier-2" class="mobile-barrier">
+                    <th class="half-barrier">
+                        <div class="barrier"></div>
+                    </th>
+                    <th class="mobile-section-title">EXPERIENCE</th>
+                    <th class="half-barrier">
+                        <div class="barrier"></div>
+                    </th>
+                </table>
+
+                <br><br><br>
+    
+                <div class="project-box" id="experience" data-externallink="https://www.dissiax.com">
+                    <span class="size4 project-date project-item">
+                        2023 &mdash; MAR 2024
+                    </span>
+        
+                    <span class="project-title project-item">
+                        Independent Contractor &#x2022; Dissiax Inc.
+                        <!-- <img class="open-in-new" src="assets/openInNew.png"> -->
+                    </span>
+        
+                    <span class="project-item"></span>
+        
+                    <div class="project-desc project-item size3">
+                        Designed and deployed software for company assets. Improved company's business by 5%.
+                    </div>
+        
+                    <span class="project-item"></span>
+        
+                    <div class="project-technologies project-item">
+                        <div class="technology size4">
+                            HTML & CSS
+                        </div>
+                        <div class="technology size4">
+                            JavaScript
+                        </div>
+                        <div class="technology size4">
+                            jQuery
+                        </div>
+                    </div>
+                </div>
+
+                <br><br><br>
 
                 <div class="block barrier" id="barrier-1" style="display: none;"></div>
 
@@ -148,9 +203,9 @@
                         AnimELLE Crossing: Carnival
                         <img class="open-in-new" src="assets/openInNew.png">
                     </span>
-        
+    
                     <span class="project-item"></span>
-        
+    
                     <span class="project-desc project-item size3">
                         Created scripts, sprites, animations, and sounds for a high-striker minigame in 
                         <a target="_blank" rel="noopener noreferrer"
@@ -355,58 +410,10 @@
                 </div>
     
                 <br><br>
-                <br>
-
-                <div class="barrier" id="barrier-2" style="display: none;"></div>
-
-                <table id="mobile-barrier-2" class="mobile-barrier">
-                    <th class="half-barrier">
-                        <div class="barrier"></div>
-                    </th>
-                    <th class="mobile-section-title">EXPERIENCE</th>
-                    <th class="half-barrier">
-                        <div class="barrier"></div>
-                    </th>
-                </table>
-
                 <br><br>
-                <br><br>
-    
-                <div class="project-box" id="experience" data-externallink="https://www.dissiax.com">
-                    <span class="size4 project-date project-item">
-                        2023 &mdash; MAR 2024
-                    </span>
-        
-                    <span class="project-title project-item">
-                        Independent Contractor &#x2022; Dissiax Inc.
-                        <!-- <img class="open-in-new" src="assets/openInNew.png"> -->
-                    </span>
-        
-                    <span class="project-item"></span>
-        
-                    <div class="project-desc project-item size3">
-                        Designed and deployed software for company assets. Improved company's business by 5%.
-                    </div>
-        
-                    <span class="project-item"></span>
-        
-                    <div class="project-technologies project-item">
-                        <div class="technology size4">
-                            HTML & CSS
-                        </div>
-                        <div class="technology size4">
-                            JavaScript
-                        </div>
-                        <div class="technology size4">
-                            jQuery
-                        </div>
-                    </div>
-                </div>
-
-                <br><br><br><br>
 
                 <div class="size4" style="text-align: center;">
-                    Made with jQuery &mdash; Updated 05/23/2024
+                    Made with jQuery &mdash; Updated 08/06/2024
                 </div>
             </div>
         </div>

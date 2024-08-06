@@ -117,7 +117,7 @@ $(function () {
         .on("mouseover", (e)=>changeSelected(e, true))
         .on("mouseleave", (e)=>changeSelected(e, false))
 
-    //
+    // menu navigation
     $(".project-box").on("click", function() {
         let target = $(this).closest('.project-box')
         if (target.find(".open-in-new").length != 0) {
@@ -132,6 +132,20 @@ $(function () {
         if ($(this).hasClass("go-back-a")) {
             switchMenu("home")
         }
+    })
+
+    // other
+    $("#resumeclicker").on("click", function() {
+        $("#email").effect("highlight", {color: 'rgb(186, 186, 209)'}, 1500);
+    })
+
+    $("#nametag").on("click", function() {
+        let height =  $(".clamped-img")[0].style["max-height"];
+        let newHeight = (height != "100%") ? "100%" : "0px";
+        let newDisplay = (height != "100%") ? "none" : "inherit";
+
+        $(".clamped-img").css("max-height", newHeight);
+        $(".dd-hideable").css("display", newDisplay);
     })
 })
 

@@ -67,6 +67,18 @@ html, body {
     filter: invert() brightness(1) opacity(0.5);
 }
 
+.clamped-img {
+    aspect-ratio: 0.73;
+    max-width: 45%;
+    max-height: 0px;
+    /* transition: max-height 0.3s ease; */
+    position: relative;
+}
+
+.-temp-hiding {
+    transition: all 0s;
+}
+
 ::selection {
     background: var(--selection-color);
     color: var(--white);
