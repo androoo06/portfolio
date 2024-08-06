@@ -155,10 +155,10 @@ $(function () {
         setTimeout(()=>{
             req.addClass("-transparent");
             req.css("opacity", 0)
-        }, 100)
+        }, 1750)
         setTimeout(()=>{
             highlighting = false;
-        }, 2000)
+        }, 2250)
     })
 
     $("#nametag").on("click", function() {

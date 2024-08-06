@@ -86,7 +86,7 @@ html, body {
 }
 
 .-transparent {
-    transition: opacity 3s ease;
+    transition: opacity 1.25s ease;
     opacity: 0;
 }
 
