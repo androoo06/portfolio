@@ -79,6 +79,17 @@ html, body {
     transition: all 0s;
 }
 
+.-opaque {
+    /* visibility: hidden; */
+    opacity: 0; 
+    transition: opacity 0s;
+}
+
+.-transparent {
+    transition: opacity 3s ease;
+    opacity: 0;
+}
+
 ::selection {
     background: var(--selection-color);
     color: var(--white);

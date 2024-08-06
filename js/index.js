@@ -143,8 +143,22 @@ $(function () {
     })
 
     // other
+    let highlighting = false;
     $("#resumeclicker").on("click", function() {
+        if (highlighting == true) return;
+        highlighting = true;
+
         $("#email").effect("highlight", {color: 'rgb(186, 186, 209)'}, 1500);
+        let req = $("#request-resume")
+        req.removeClass("-transparent");
+        req.css("opacity", 1)
+        setTimeout(()=>{
+            req.addClass("-transparent");
+            req.css("opacity", 0)
+        }, 100)
+        setTimeout(()=>{
+            highlighting = false;
+        }, 2000)
     })
 
     $("#nametag").on("click", function() {
