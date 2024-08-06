@@ -74,15 +74,12 @@ function switchMenu(menu, projName=null) {
     openMenu = menu
 }
 
-$(function () {
-    let about = $('#sections-div').offset().top - window.innerHeight
-    let experience = $('#experience').offset().top - window.innerHeight
-    let projects = $('#project-animelle').offset().top + ($('#project-animelle').outerHeight()) - window.innerHeight
-
-    console.log(about)
-    console.log(experience)
-    console.log(projects)
-
+jQuery(function () {
+    // let about = $('#sections-div').offset().top - window.innerHeight
+    let pxBuffer = 50
+    let experience = $('#experience').offset().top - pxBuffer //- window.innerHeight
+    let projects = $('#project-animelle').offset().top - pxBuffer // + ($('#project-animelle').outerHeight()) - window.innerHeight
+    
     // project hovers
     $(document).on("scrollend", function() {
         let hoverOver = $('.project-box:hover')
@@ -104,14 +101,13 @@ $(function () {
 
     // automatic section title changes
     $(window).on('scroll', function () {
-        console.log($(window).scrollTop());
         if (openMenu != "home") return;
 
         if ($(window).scrollTop() >= projects) {
             autoSetSelected("PROJECTS")
         } else if ($(window).scrollTop() >= experience) {
             autoSetSelected("EXPERIENCE")
-        } else if ($(window).scrollTop() >= about) {
+        } else if ($(window).scrollTop() >= 0) {
             autoSetSelected("ABOUT")
         }
     })
