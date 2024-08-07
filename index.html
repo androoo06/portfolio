@@ -12,7 +12,7 @@
     <title>Andrew Miller's Portfolio</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script src="js/index.js" defer></script>
 </head>
 
@@ -25,9 +25,15 @@
                 <div class="empty block"></div>
 
                 <div id="title-div">
-                    <a class="size1" id="nametag" style="user-select: none;">
+                    <a class="size1" id="nametag" style="user-select: none; background-color: blue; ">
                         Andrew Miller
-                        <img class="clamped-img" src="assets/me.jpg"/>
+                        <div class="clamped-img" style="display: none; background-color: red;">
+                            <img src="assets/me.jpg" alt="X_X" style="background-color: green;">
+                            <!-- <img class="clamped-img" src="assets/me.jpg" alt="X_X" style="background-color: green;"> -->
+                            <span class="block size3 img-txt" style="display: none; background-color: yellow;">
+                                This is me. Thanks for visiting!
+                            </span>
+                        </div>
                     </a>
                     <span class="block size2 dd-hideable">Software Developer</span>
                     <!-- <span class="block size3 pad-top dd-hideable" id="email">andrew.miller0810@gmail.com</span> -->

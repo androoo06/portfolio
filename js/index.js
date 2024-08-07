@@ -4,6 +4,10 @@ let openMenu = "home"; // project-view
 
 let scrollY = 0
 
+function isMobile() {
+    return window.innerWidth <= 1027;
+}
+
 function changeSelected(event, bool) {
     let element = $(event.target).closest(".section-title-parent")[0]
     let id = element.id.split("-")[1]
@@ -52,11 +56,16 @@ function switchMenu(menu, projName=null) {
         }
 
         // the constraint is -- don't show this stuff on mobile view
-        if (((menu != "home") && ($("#sections-div").css("display") != "none")) 
-        || ((menu == "home") && ($("#return-div").css("display") != "none"))) {
+        if (!isMobile) {
             visibleSectionDiv.css("display", "none")
             hiddenSectionDiv.css("display", "block")
         }
+
+        // if (((menu != "home") && ($("#sections-div").css("display") != "none")) 
+        // || ((menu == "home") && ($("#return-div").css("display") != "none"))) {
+        //     visibleSectionDiv.css("display", "none")
+        //     hiddenSectionDiv.css("display", "block")
+        // }
     }, 500)
 
     setTimeout(()=> {
@@ -74,7 +83,7 @@ function switchMenu(menu, projName=null) {
     openMenu = menu
 }
 
-jQuery(function () {
+$(function () {
     // let about = $('#sections-div').offset().top - window.innerHeight
     let pxBuffer = 50
     let experience = $('#experience').offset().top - pxBuffer //- window.innerHeight
@@ -145,6 +154,7 @@ jQuery(function () {
         highlighting = true;
 
         $("#email").effect("highlight", {color: 'rgb(186, 186, 209)'}, 1500);
+
         let req = $("#request-resume")
         req.removeClass("-transparent");
         req.css("opacity", 1)
@@ -157,13 +167,22 @@ jQuery(function () {
         }, 2250)
     })
 
+    let clicked = false;
     $("#nametag").on("click", function() {
-        let height =  $(".clamped-img")[0].style["max-height"];
-        let newHeight = (height != "100%") ? "100%" : "0px";
-        let newDisplay = (height != "100%") ? "none" : "inherit";
+        let display = (clicked) ? "none" : "inherit";
+        let displayOpp = (clicked) ? "inherit" : "none";
+        let width = (clicked) ? "0" : "100%"
 
-        $(".clamped-img").css("max-height", newHeight);
-        $(".dd-hideable").css("display", newDisplay);
+        $(".clamped-img").css("max-width", width)
+        $(".clamped-img").css("display", display)
+        $(".img-txt").css("display", display)
+        $(".dd-hideable").each(function(i, obj) {
+            if (obj.id != "sections-div" || !isMobile()) {
+                $(obj).css("display", displayOpp)
+            }
+        })
+
+        clicked = !clicked
     })
 })
 

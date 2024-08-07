@@ -63,6 +63,20 @@
     display: none;
 } */
 
+.clamped-img { /* red */
+    width: 65%;
+    position:relative;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.clamped-img img { /* green */
+    aspect-ratio: 0.67;
+    max-width: 50%;
+    transform: translateX(50%);
+}
+
+/* when screen width is less than 1027 px (mobile view) */
 @media screen and (max-width: 1027px) {
     #left {
         position: relative;
