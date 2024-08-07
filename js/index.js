@@ -171,7 +171,7 @@ $(function () {
     $("#nametag").on("click", function() {
         let display = (clicked) ? "none" : "inherit";
         let displayOpp = (clicked) ? "inherit" : "none";
-        let width = (clicked) ? "0" : "100%"
+        let width = (clicked) ? "0" : (isMobile() ? "30%" : "100%")
 
         $(".clamped-img").css("max-width", width)
         $(".clamped-img").css("display", display)
