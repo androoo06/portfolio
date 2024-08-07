@@ -148,27 +148,8 @@ $(function () {
     })
 
     // other
-    let highlighting = false;
-    $("#resumeclicker").on("click", function() {
-        if (highlighting == true) return;
-        highlighting = true;
-
-        $("#email").effect("highlight", {color: 'rgb(186, 186, 209)'}, 1500);
-
-        let req = $("#request-resume")
-        req.removeClass("-transparent");
-        req.css("opacity", 1)
-        setTimeout(()=>{
-            req.addClass("-transparent");
-            req.css("opacity", 0)
-        }, 1750)
-        setTimeout(()=>{
-            highlighting = false;
-        }, 2250)
-    })
-
     let clicked = false;
-    $("#nametag").on("click", function() {
+    function toggleClick() {
         let display = (clicked) ? "none" : "inherit";
         let displayOpp = (clicked) ? "inherit" : "none";
         let width = (clicked) ? "0" : (isMobile() ? "30%" : "100%")
@@ -183,6 +164,30 @@ $(function () {
         })
 
         clicked = !clicked
+    }
+    $("#nametag").on("click", toggleClick)
+
+    let highlighting = false;
+    $("#resumeclicker").on("click", function() {
+        if (highlighting == true) return;
+        highlighting = true;
+
+        if (clicked == true) {
+            toggleClick();
+        }
+
+        $("#email").effect("highlight", {color: 'rgb(186, 186, 209)'}, 1500);
+
+        let req = $("#request-resume")
+        req.removeClass("-transparent");
+        req.css("opacity", 1)
+        setTimeout(()=>{
+            req.addClass("-transparent");
+            req.css("opacity", 0)
+        }, 1750)
+        setTimeout(()=>{
+            highlighting = false;
+        }, 2250)
     })
 })
 
