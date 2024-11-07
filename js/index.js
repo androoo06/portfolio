@@ -130,10 +130,15 @@ $(function () {
     $(".project-box").on("click", function() {
         let target = $(this).closest('.project-box')
         if (target.find(".open-in-new").length != 0) {
-            // window.open(target[0].dataset.externallink, '_blank').focus()
+            let external = target[0].dataset.externallink
+            if (external) {
+                window.open(external, '_blank').focus()
+            }
 
             let projName = target[0].dataset.projname
-            switchMenu("project-view", projName=projName)
+            if (projName) {
+                switchMenu("project-view", projName=projName)
+            }
         }
     })
 
